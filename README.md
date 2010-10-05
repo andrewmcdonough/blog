@@ -18,15 +18,27 @@ Generate a scaffold for posts, which will need a title, content and a publish fl
   <code>script/generate scaffold Post title:string content:text publish:boolean</code>
 
 Create your database:
+
   <code>rake db:create</code>
 
 Run the migration that was created by the scaffold.  This will create the posts table:
+
   <code>rake db:migrate</code>
 
+Start the server:
+
+  <code>ruby script/server</code>
+
+Delete the default index.html page:
+
+  <code>rm public/index.html</code>
+
 We decided the posts table needed an intro field.  Generate a migration to create this:
+
   <code>script/generate migration add_intro_to_posts intro:text</code>
 
 Run the migration you just created.  This will alter the table in the database and add the column:
+
   <code>rake db:migrate</code>
 
 We decided we wanted each post to have a number of comments, so we scaffolded this:
