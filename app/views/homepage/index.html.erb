@@ -1,0 +1,9 @@
+<h1><%= @blog_title %></h1>
+Andrew loves programming ruby
+<br/><br/>
+<% @posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <%= post.intro %> 
+  <br/>
+<% end %>
+

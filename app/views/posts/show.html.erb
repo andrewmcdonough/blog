@@ -1,0 +1,26 @@
+<h1><%= @post.title %></h1>
+<%=h @post.content %>
+
+
+<br/><br/>
+<h2>Comments</h2>
+<% form_for([@post,@comment]) do |f| %>
+  <p>
+  <%= f.text_area :comment, :rows => 4, :cols => 60 %>
+  </p>
+  <p>
+    By: <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.submit 'Comment' %>
+  </p>
+<% end %>
+
+<% @post.comments.each do |comment| %>
+  <%= comment.comment %><br/>
+  Comment made by <%= comment.commenter %>
+  <br/><br/>
+<% end %>
+
+
+
